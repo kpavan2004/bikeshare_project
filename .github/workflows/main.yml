@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: pip install -r requirements/requirements.txt
       - name: pylint the setup file
         run:  pylint setup.py 
   train:
