@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+This module provides an example of setup file for bikeshare_model
+"""
 
 from pathlib import Path
 
@@ -18,7 +21,7 @@ REQUIRES_PYTHON = ">=3.7.0"
 # Except, perhaps the License and Trove Classifiers!
 # Trove Classifiers: https://pypi.org/classifiers/
 
-long_description = DESCRIPTION
+LONG_DESCRIPTION = DESCRIPTION
 
 # Load the package's VERSION file as a dictionary.
 about = {}
@@ -26,14 +29,15 @@ ROOT_DIR = Path(__file__).resolve().parent
 print(ROOT_DIR)
 REQUIREMENTS_DIR = ROOT_DIR / 'requirements'
 PACKAGE_DIR = ROOT_DIR / 'bikeshare_model'
-with open(PACKAGE_DIR / "VERSION") as f:
+with open(PACKAGE_DIR / "VERSION", encoding='utf-8') as f:
     _version = f.read().strip()
     about["__version__"] = _version
 
 
 # What packages are required for this module to be executed?
 def list_reqs(fname="requirements.txt"):
-    with open(REQUIREMENTS_DIR / fname) as fd:
+    """An example function docstring"""
+    with open(REQUIREMENTS_DIR / fname,encoding='utf-8') as fd:
         return fd.read().splitlines()
 
 # Where the magic happens:
@@ -41,7 +45,7 @@ setup(
     name=NAME,
     version=about["__version__"],
     description=DESCRIPTION,
-    long_description=long_description,
+    long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     author=AUTHOR,
     author_email=EMAIL,
