@@ -12,7 +12,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements/requirements.txt
       - name: pylint the setup file
-        run:  pylint setup.py 
+        run:  pylint setup.py
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: pip install -r black
+      - name: black the setup file
+        run:  black .
   train:
     needs: lint
     runs-on: ubuntu-latest
