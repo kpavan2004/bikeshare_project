@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
-        run: pip install -r requirements/requirements.txt
+        run: pip install pylint
       - name: pylint the setup file
         run:  pylint setup.py
   black:
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
-        run: pip install -r black
+        run: pip install black
       - name: black the setup file
         run:  black .
   train:
