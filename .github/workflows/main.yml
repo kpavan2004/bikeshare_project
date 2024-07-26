@@ -61,7 +61,11 @@ jobs:
         name: my-build-package
         path: dist/*.whl
         retention-days: 1
-      
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
   push-image:
     needs: [train, test, build]
     runs-on: ubuntu-latest
